@@ -1,71 +1,28 @@
-import * as React from "react";
-import { useTheme } from "@mui/material/styles";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import React, { useState } from "react";
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
+const TransactionType = () => {
+  const [img, setImg] = useState("airtel");
 
-const names = ["Airtime Purchase", "Data Purchase"];
-
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
-
-export default function MultipleSelect() {
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChange = (e) => {
+    setImg(e.target.value);
+    console.log(e.target.value);
   };
 
   return (
-    <div className="w-full py-3">
-      <FormControl className="w-full">
-        <InputLabel id="demo-multiple-name-label">Airtime Purchase</InputLabel>
-        <Select
-          labelId="demo-multiple-name-label"
-          id="demo-multiple-name"
-          multiple
-          value={personName}
+    <div className="border-2 border-gray-200 w-full rounded-md">
+      <div className="flex items-center px-2">
+        <select
+          name="cars"
+          id="cars"
+          className="py-5 bg-white w-full flex justify-between outline-none"
           onChange={handleChange}
-          input={<OutlinedInput label="Name" />}
-          MenuProps={MenuProps}
         >
-          {names.map((name) => (
-            <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, personName, theme)}
-            >
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+          <option value="airtel">Airtime Purchase</option>
+          <option value="mtn">Data Purchase</option>
+        </select>
+      </div>
     </div>
   );
-}
+};
+
+export default TransactionType;

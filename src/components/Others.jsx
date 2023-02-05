@@ -54,7 +54,7 @@ const Others = () => {
           <input
             type="number"
             placeholder="08123456789"
-            className="border-0 font-[600] w-full text-lg text-black placeholder:font-[600] placeholder:text-black"
+            className="border-0 font-[600] w-full text-lg text-black placeholder:font-[600] outline-none"
           />
           <div>
             <CallOutlinedIcon />

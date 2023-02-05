@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import {
   Navbar,
-  MultipleSelect,
+  MultiSelect,
   Button,
   Myself,
   Others,
@@ -57,14 +57,17 @@ const Home = () => {
               <p className="text-gray-500 poppins-title">Enter eWallet ID</p>
               <div className="w-full my-3 flex justify-between py-2 rounded-md px-3 items-center border-x-2 border-y-2 border-gray-200">
                 <HttpsOutlinedIcon />
-                <input type="text" className="border-0 w-full py-3 px-2" />
+                <input
+                  type="text"
+                  className="border-0 w-full py-3 px-2 outline-none"
+                />
                 <DoneOutlinedIcon className="text-green-600" />
               </div>
             </div>
 
             <div>
               <p className="text-gray-500 poppins-title">Choose Network</p>
-              <MultipleSelect />
+              <MultiSelect />
             </div>
           </div>
         </div>

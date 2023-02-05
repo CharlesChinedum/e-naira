@@ -3,7 +3,7 @@ import MultipleSelect from "./TransactionType";
 
 const Suggestion = ({ text }) => {
   return (
-    <div className="bg-green-100 rounded-md py-3 px-3 font-[600] md:px-7 md:py-4 hover:cursor-pointer">
+    <div className="bg-green-100 rounded-md py-3 px-2 font-[600] md:px-7 md:py-4 hover:cursor-pointer">
       N{text}
     </div>
   );
